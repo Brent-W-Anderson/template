@@ -11,6 +11,7 @@
     "extends": ["plugin:@typescript-eslint/recommended"],
     "rules": {
         "quotes": ["error", "single"],
+        "max-len": ["error", { "code": 80 }],
         "sort-imports": [
             "error",
             {

@@ -2,12 +2,13 @@ const path = require( 'path' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
 const ForkTsCheckerWebpackPlugin = require( 'fork-ts-checker-webpack-plugin' )
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
+const TerserPlugin = require( 'terser-webpack-plugin' )
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
 
 module.exports = {
     mode: process.env.WEBPACK_MODE || 'development',
+    devtool: process.env.WEBPACK_MODE === 'development' ? 'source-map' : false,
     entry: './src/index',
-    devtool: 'source-map',
     output: {
         path: path.resolve( __dirname, 'dist' ),
         filename: '[name].[contenthash].js'
@@ -42,6 +43,14 @@ module.exports = {
         new CleanWebpackPlugin(),
         new ForkTsCheckerWebpackPlugin()
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin( {
+                extractComments: false,
+            } ),
+        ],
+    },
     devServer: {
         port: 3001,
         static: './dist/main.js'
