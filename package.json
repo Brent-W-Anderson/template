@@ -1,5 +1,5 @@
 {
-  "name": "carrier",
+  "name": "template",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "license": "UNLICENSED",
@@ -24,6 +24,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.33.2",
     "fork-ts-checker-webpack-plugin": "^9.0.0",
+    "html-webpack-plugin": "^5.5.3",
     "sass": "^1.69.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",

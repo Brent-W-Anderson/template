@@ -1,6 +1,7 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -28,10 +29,13 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, './public'),
+                    from: path.resolve(__dirname, './src/assets/favicon.ico'),
                     to: path.resolve(__dirname, './dist')
                 }
             ]
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './src/index.html')
         }),
         new ForkTsCheckerWebpackPlugin()
     ],
