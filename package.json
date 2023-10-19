@@ -1,0 +1,40 @@
+{
+  "name": "carrier",
+  "version": "1.0.0",
+  "main": "src/index.tsx",
+  "license": "UNLICENSED",
+  "private": false,
+  "scripts": {
+    "start": "start http://localhost:3001/ | webpack server",
+    "build": "rimraf dist & webpack"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "@types/react": "^18.2.27",
+    "@types/react-dom": "^18.2.12",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "fork-ts-checker-webpack-plugin": "^9.0.0",
+    "sass": "^1.69.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.0",
+    "typescript": "*",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
