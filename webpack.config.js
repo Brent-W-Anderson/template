@@ -2,13 +2,14 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: process.env.WEBPACK_MODE || 'development',
     entry: './src/index',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: '[name].[contenthash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -37,6 +38,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html')
         }),
+        new CleanWebpackPlugin(),
         new ForkTsCheckerWebpackPlugin()
     ],
     devServer: {
