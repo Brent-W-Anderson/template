@@ -1,6 +1,6 @@
-import React from 'react'
-
 import './app.scss'
+
+import React from 'react'
 
 export default function App (): React.JSX.Element {
     return <>

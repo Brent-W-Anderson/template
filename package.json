@@ -6,7 +6,9 @@
   "private": false,
   "scripts": {
     "start": "concurrently \"webpack serve\" \"wait-on http://localhost:3001 && start http://localhost:3001/\"",
-    "build": "cross-env WEBPACK_MODE=production webpack"
+    "build": "cross-env WEBPACK_MODE=production webpack",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/"
   },
   "devDependencies": {
     "@types/node": "^20.8.4",

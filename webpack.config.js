@@ -1,43 +1,43 @@
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require( 'path' )
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
+const ForkTsCheckerWebpackPlugin = require( 'fork-ts-checker-webpack-plugin' )
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
 
 module.exports = {
     mode: process.env.WEBPACK_MODE || 'development',
     entry: './src/index',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve( __dirname, 'dist' ),
         filename: '[name].[contenthash].js'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
+                loader: 'ts-loader',
             },
             {
                 test: /\.(s(a|c)ss)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },
     plugins: [
-        new CopyWebpackPlugin({
+        new CopyWebpackPlugin( {
             patterns: [
                 {
-                    from: path.resolve(__dirname, './src/assets/favicon.ico'),
-                    to: path.resolve(__dirname, './dist')
+                    from: path.resolve( __dirname, './src/assets/favicon.ico' ),
+                    to: path.resolve( __dirname, './dist' )
                 }
             ]
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/index.html')
-        }),
+        } ),
+        new HtmlWebpackPlugin( {
+            template: path.resolve( __dirname, './src/index.html' )
+        } ),
         new CleanWebpackPlugin(),
         new ForkTsCheckerWebpackPlugin()
     ],
