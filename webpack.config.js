@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
 const ForkTsCheckerWebpackPlugin = require( 'fork-ts-checker-webpack-plugin' )
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 const TerserPlugin = require( 'terser-webpack-plugin' )
+const { TypedCssModulesPlugin } = require( 'typed-css-modules-webpack-plugin' )
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
 
 module.exports = {
@@ -61,6 +62,9 @@ module.exports = {
         } ),
         new HtmlWebpackPlugin( {
             template: path.resolve( __dirname, './src/index.html' )
+        } ),
+        new TypedCssModulesPlugin( {
+            globPattern: 'src/**/*.scss'
         } ),
         new CleanWebpackPlugin(),
         new ForkTsCheckerWebpackPlugin()

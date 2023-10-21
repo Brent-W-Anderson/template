@@ -7,28 +7,61 @@
             "jsx": true
         }
     },
-    "plugins": ["@typescript-eslint"],
-    "extends": ["plugin:@typescript-eslint/recommended"],
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "plugin:@typescript-eslint/recommended"
+    ],
     "rules": {
-        "quotes": ["warn", "single"],
-        "max-len": ["warn", { "code": 80 }],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 80
+            }
+        ],
         "sort-imports": [
             "warn",
             {
                 "ignoreCase": false,
                 "ignoreDeclarationSort": false,
                 "ignoreMemberSort": false,
-                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+                "memberSyntaxSortOrder": [
+                    "none",
+                    "all",
+                    "multiple",
+                    "single"
+                ]
             }
         ],
-        "space-in-parens": ["warn", "always"],
-        "object-curly-spacing": ["warn", "always"]
+        "space-in-parens": [
+            "warn",
+            "always"
+        ],
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ]
     },
     "overrides": [
         {
-            "files": ["webpack.config.js"],
+            "files": [
+                "webpack.config.js"
+            ],
             "rules": {
                 "@typescript-eslint/no-var-requires": "off"
+            }
+        },
+        {
+            "files": [
+                "*.scss.d.ts"
+            ],
+            "rules": {
+                "quotes": "off"
             }
         }
     ]

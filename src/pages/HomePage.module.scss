@@ -1,10 +1,7 @@
-#root {
-    // border: 3px solid $THEME_COLOR;
-    height: 100vh;
+@import '../assets/scss/variables.module.scss';
 
-    h1 {
-        text-align: center;
-        // color: $THEME_COLOR;
-        padding: 20px;
-    }
+.title {
+    text-align: center;
+    color: $THEME_COLOR;
+    padding: 20px;
 }
