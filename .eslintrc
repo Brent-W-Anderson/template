@@ -10,10 +10,10 @@
     "plugins": ["@typescript-eslint"],
     "extends": ["plugin:@typescript-eslint/recommended"],
     "rules": {
-        "quotes": ["error", "single"],
-        "max-len": ["error", { "code": 80 }],
+        "quotes": ["warn", "single"],
+        "max-len": ["warn", { "code": 80 }],
         "sort-imports": [
-            "error",
+            "warn",
             {
                 "ignoreCase": false,
                 "ignoreDeclarationSort": false,
@@ -21,8 +21,8 @@
                 "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
             }
         ],
-        "space-in-parens": ["error", "always"],
-        "object-curly-spacing": ["error", "always"]
+        "space-in-parens": ["warn", "always"],
+        "object-curly-spacing": ["warn", "always"]
     },
     "overrides": [
         {

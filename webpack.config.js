@@ -20,11 +20,33 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader',
+                loader: 'ts-loader'
             },
             {
-                test: /\.(s(a|c)ss)$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                test: /\.module\.scss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName:
+                                    '[name]__[local]___[hash:base64:5]'
+                            },
+                            importLoaders: 1
+                        }
+                    },
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                exclude: /\.module\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
             }
         ]
     },
