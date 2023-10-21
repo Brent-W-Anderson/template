@@ -1,11 +1,11 @@
 import HomePage from './pages/HomePage'
 import React from 'react'
-import style from './App.module.scss'
+import classnames from 'classnames'
+import style from './assets/scss/globals.module.scss'
 
-// TODO: SETUP PAGES/ REACT-ROUTER/ AND LAZY LOADING COMPONENTS
-// TODO: SETUP README
+// TODO: REACT-ROUTER/ LAZY LOADING COMPONENTS/ README
 export default function App(): React.JSX.Element {
-    return <div className={style.app}>
+    return <div className={classnames( style.app, style[ 'themed-border' ] )}>
         <HomePage />
     </div>
 }

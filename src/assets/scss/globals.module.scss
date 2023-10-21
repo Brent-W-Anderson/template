@@ -1,3 +1,5 @@
+@import './variables.module.scss';
+
 * {
     box-sizing: border-box;
     position: relative;
@@ -11,4 +13,8 @@
     width: 100vw;
     left: 0;
     top: 0;
+}
+
+.themed-border {
+    border: 3px solid $THEME_COLOR;
 }
