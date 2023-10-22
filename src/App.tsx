@@ -3,7 +3,7 @@ import React from 'react'
 import style from './assets/scss/globals/globals.module.scss'
 import HomePage from './pages/HomePage/HomePage'
 
-// TODO: REACT-ROUTER/ LAZY LOADING COMPONENTS/ README
+// TODO: ADD -> REACT-ROUTER & LAZY LOADING WITH SUSPENSE
 const App = (): React.JSX.Element => {
     return (
         <div className={style.app}>
