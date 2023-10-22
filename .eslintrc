@@ -1,68 +1,54 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "extends": [
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "rules": {
-        "quotes": [
-            "warn",
-            "single"
-        ],
-        "max-len": [
-            "warn",
-            {
-                "code": 80
-            }
-        ],
-        "sort-imports": [
-            "warn",
-            {
-                "ignoreCase": false,
-                "ignoreDeclarationSort": false,
-                "ignoreMemberSort": false,
-                "memberSyntaxSortOrder": [
-                    "none",
-                    "all",
-                    "multiple",
-                    "single"
-                ]
-            }
-        ],
-        "space-in-parens": [
-            "warn",
-            "always"
-        ],
-        "object-curly-spacing": [
-            "warn",
-            "always"
-        ]
-    },
-    "overrides": [
-        {
-            "files": [
-                "webpack.config.js"
-            ],
-            "rules": {
-                "@typescript-eslint/no-var-requires": "off"
-            }
-        },
-        {
-            "files": [
-                "*.scss.d.ts"
-            ],
-            "rules": {
-                "quotes": "off"
-            }
-        }
-    ]
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["@typescript-eslint"],
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"quotes": ["warn", "single"],
+		"max-len": [
+			"warn",
+			{
+				"code": 80
+			}
+		],
+		"sort-imports": [
+			"warn",
+			{
+				"ignoreCase": false,
+				"ignoreDeclarationSort": false,
+				"ignoreMemberSort": false,
+				"memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+			}
+		],
+		"object-curly-spacing": ["warn", "always"],
+		"prettier/prettier": [
+			"warn",
+			{
+				"printWidth": 80
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["webpack.config.js"],
+			"rules": {
+				"@typescript-eslint/no-var-requires": "off"
+			}
+		},
+		{
+			"files": ["*.scss.d.ts"],
+			"rules": {
+				"quotes": "off"
+			}
+		}
+	]
 }
