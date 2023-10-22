@@ -1,10 +1,11 @@
 const path = require('path')
+
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { TypedCssModulesPlugin } = require('typed-css-modules-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: process.env.WEBPACK_MODE || 'development',
@@ -47,7 +48,7 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                use: ['@svgr/webpack', 'url-loader'],
+                use: ['@svgr/webpack', 'file-loader'],
             },
         ],
     },
