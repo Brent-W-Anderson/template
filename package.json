@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "private": false,
   "scripts": {
-    "start": "cross-env WEBPACK_MODE=development concurrently \"webpack serve\" \"wait-on http://localhost:3001 && start http://localhost:3001/\"",
+    "start": "cross-env WEBPACK_MODE=development webpack serve",
     "build": "cross-env WEBPACK_MODE=production webpack",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/"
@@ -16,7 +16,6 @@
     "@types/react-dom": "^18.2.12",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "clean-webpack-plugin": "^4.0.0",
-    "concurrently": "^8.2.2",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
@@ -38,7 +37,6 @@
     "typed-css-modules": "^0.8.0",
     "typed-css-modules-webpack-plugin": "^0.2.0",
     "typescript": "*",
-    "wait-on": "^7.0.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"

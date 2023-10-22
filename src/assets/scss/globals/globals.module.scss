@@ -1,0 +1,35 @@
+@import '../colors/colors.module.scss';
+@import '../breakpoints/breakpoints.module.scss';
+
+* :not( body ) {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: $GRAY;
+
+    :global( #root ) {
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    
+        .app {
+            background: rgba( $WHITE, 10% );
+            box-shadow: 0 0 40px rgba( $BLACK, 50% );
+            width: 100%;
+
+            @include desktop {
+                border-radius: 8px;
+                max-width: 1920px;
+                margin: 20px 0;
+            }
+        }
+    }
+}
