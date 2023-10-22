@@ -26,9 +26,9 @@ body {
             width: 100%;
 
             @include desktop {
-                border-radius: 8px;
-                max-width: 1920px;
-                margin: 20px 0;
+                border-radius: 8px 8px 0 0;
+                max-width: 1440px;
+                margin: 20px 0 0 0;
             }
         }
     }
